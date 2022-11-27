@@ -34,7 +34,7 @@ with Result:
 
         d = {'result':[DE]}
         df = pd.DataFrame(data=d)
-        st.table(df)
+        st.DataFrame(df)
         
 data_input1 = st.container()
 with data_input1:
