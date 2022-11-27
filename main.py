@@ -14,7 +14,7 @@ with header:
     st.title('DE Calculator')
 
 with data_input:
-    den=st.number_input('Density')
+    den=st.number_input('Particle Density')
 
     dia=st.number_input('Diameter')
     MH=st.number_input('MH')
