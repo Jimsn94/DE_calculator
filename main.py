@@ -78,4 +78,4 @@ with Result1:
     if But2:
 
         df1 = df_combination(density,diameter,deposition)
-        st.table(df1)
+        st.dataframe(df1)
