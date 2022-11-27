@@ -36,7 +36,6 @@ with Result:
         df = pd.DataFrame(data=d)
         st.table(df)
         et = time.time()
-        print(et-st)
 data_input1 = st.container()
 with data_input1:
     density=st.number_input('Density1')
