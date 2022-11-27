@@ -3,6 +3,8 @@ import pandas as pd
 from joblib import load
 import numpy as np
 import sklearn
+import time
+
 header = st.container()
 header1 = st.container()
 data_input = st.container()
@@ -23,6 +25,7 @@ with data_input:
 
 with Result:
     if But1:
+        st = time.time()
         scaler = load(open('scale.sav', 'rb'))
         model = load(open('randomForest.sav','rb'))
         x_test= np.array([[MH,dia,den,time]])
@@ -32,6 +35,8 @@ with Result:
         d = {'result':[DE]}
         df = pd.DataFrame(data=d)
         st.table(df)
+        et = time.time()
+        print(et-st)
 data_input1 = st.container()
 with data_input1:
     density=st.number_input('Density1')
