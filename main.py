@@ -26,7 +26,7 @@ with data_input:
 with Result:
     if But1:
         import time
-        bg = time.time()
+#         bg = time.time()
         scaler = load(open('scale.sav', 'rb'))
         model = load(open('randomForest.sav','rb'))
         x_test= np.array([[MH,dia,den,time]])
@@ -36,8 +36,8 @@ with Result:
         d = {'result':[DE]}
         df = pd.DataFrame(data=d)
         st.dataframe(df)
-        end = time.time()
-        st.write(end - bg)
+#         end = time.time()
+#         st.write(end - bg)
 data_input1 = st.container()
 with data_input1:
     density=st.number_input('Density1')
