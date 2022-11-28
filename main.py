@@ -5,12 +5,14 @@ import numpy as np
 import sklearn
 import time
 begin = time.time()
+
 header = st.container()
 header1 = st.container()
 data_input = st.container()
 Result = st.container()
 But1 = st.button('Calculate')
-
+end = time.time()
+st.write(end - begin)
 
 with header:
     st.title('DE Calculator')
