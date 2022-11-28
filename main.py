@@ -4,7 +4,7 @@ from joblib import load
 import numpy as np
 import sklearn
 import time
-
+begin = time.time()
 header = st.container()
 header1 = st.container()
 data_input = st.container()
