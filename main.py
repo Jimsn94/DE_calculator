@@ -25,7 +25,7 @@ with data_input:
 
 with Result:
     if But1:
-        import time
+#         import time
 #         bg = time.time()
         scaler = load(open('scale.sav', 'rb'))
         model = load(open('randomForest.sav','rb'))
