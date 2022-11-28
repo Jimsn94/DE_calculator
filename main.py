@@ -38,8 +38,7 @@ with Result:
         d = {'result':[DE]}
         df = pd.DataFrame(data=d)
         st.dataframe(df)
-        end = time.time()
-        st.write(end - begin)
+        
 #         end = time.time()
 #         st.write(end - bg)
 data_input1 = st.container()
