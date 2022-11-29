@@ -3,50 +3,41 @@ import pandas as pd
 from joblib import load
 import numpy as np
 import sklearn
-import time
-begin = time.time()
-
 header = st.container()
 header1 = st.container()
 data_input = st.container()
 Result = st.container()
 But1 = st.button('Calculate')
-end = time.time()
-st.write(end - begin)
+
 
 with header:
-    st.title('DE Calculator')
+    st.title('AI Driven Deposition Fraction Calculator [%]')
+st.caption("The following calculator estimates desired Medium Height and Incubation Time for a given density and diameter to reach a desired deposition fraction of nano particle on the cell.")
 
 with data_input:
-    den=st.number_input('Particle Density')
-
-    dia=st.number_input('Diameter')
-    MH=st.number_input('MH')
-    time=st.number_input('Time')
+    den=st.number_input('Density [1.0-15.0][gram/cm^3]')
+    dia=st.number_input('Diameter [1.0-1000.0] [nm]')
+    MH=st.number_input('Medium Height [0.1-20] [mm]')
+    time=st.number_input('Time [0-72] [hour]')
 
 
 with Result:
     if But1:
-#         import time
-#         bg = time.time()
         scaler = load(open('scale.sav', 'rb'))
         model = load(open('randomForest.sav','rb'))
         x_test= np.array([[MH,dia,den,time]])
         X_test_scaled = scaler.transform(x_test)
         DE = model.predict(X_test_scaled)
 
-        d = {'result':[DE]}
+        d = {'Deposition Fraction %':[DE]}
         df = pd.DataFrame(data=d)
-        st.dataframe(df)
-        
-#         end = time.time()
-#         st.write(end - bg)
+        st.table(df)
 data_input1 = st.container()
 with data_input1:
-    density=st.number_input('Density1')
+    density=st.number_input('Density [1.0-15.0] [gram/cm^3]')
 
-    diameter=st.number_input('Diameter1')
-    deposition=st.number_input('Deposition')
+    diameter=st.number_input('Diameter [1.0-1000.0][nm]')
+    deposition=st.number_input('Deposition Fraction [0-100] [%]')
 
 def df_combination(density,diameter,deposition):
 
@@ -76,11 +67,11 @@ def df_combination(density,diameter,deposition):
             res.append([d,np.nan])
 
 
-    return pd.DataFrame(res,columns=['Dish(mm)','Time(h)'])
+    return pd.DataFrame(res,columns=['Medium Height[mm]','Time[h]'])
 Result1 = st.container()
-But2 = st.button('Calculate1')
+But2 = st.button('Calculate ')
 with Result1:
     if But2:
 
         df1 = df_combination(density,diameter,deposition)
-        st.dataframe(df1)
+        st.table(df1)
