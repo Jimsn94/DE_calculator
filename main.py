@@ -15,10 +15,10 @@ with header:
 st.caption("The following calculator estimates desired Medium Height and Incubation Time for a given density and diameter to reach a desired deposition fraction of nano particle on the cell.")
 
 with data_input:
-    den=st.number_input('Density [1.0-15.0][gram/cm^3]')
-    dia=st.number_input('Diameter [1.0-1000.0] [nm]')
-    MH=st.number_input('Medium Height [0.1-20] [mm]')
-    time=st.number_input('Time [0-72] [hour]')
+    den=st.number_input('Density [gram/cm^3]')
+    dia=st.number_input('Diameter [nm]')
+    MH=st.number_input('Medium Height [mm]')
+    time=st.number_input('Time [hour]')
 
 
 with Result:
@@ -34,10 +34,10 @@ with Result:
         st.table(df)
 data_input1 = st.container()
 with data_input1:
-    density=st.number_input('Density [1.0-15.0] [gram/cm^3]')
+    density=st.number_input('Density [gram/cm^3]')
 
-    diameter=st.number_input('Diameter [1.0-1000.0][nm]')
-    deposition=st.number_input('Deposition Fraction [0-100] [%]')
+    diameter=st.number_input('Diameter [nm]')
+    deposition=st.number_input('Deposition Fraction [%]')
 
 def df_combination(density,diameter,deposition):
 
