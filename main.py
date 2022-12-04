@@ -34,9 +34,9 @@ with Result:
         st.table(df)
 data_input1 = st.container()
 with data_input1:
-    density=st.number_input('Density [gram/cm^3]')
+    density=st.number_input('Density[gram/cm^3]')
 
-    diameter=st.number_input('Diameter [nm]')
+    diameter=st.number_input('Diameter[nm]')
     deposition=st.number_input('Deposition Fraction [%]')
 
 def df_combination(density,diameter,deposition):
