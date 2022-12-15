@@ -7,7 +7,9 @@ with open('styles.css') as f:
     st.markdown(f'<style>{f.read()}</style>',unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
-    st.subheader('AI Driven Deposition Fraction Calculator [%]')
+    # st.subheader('AI Driven Deposition Fraction Calculator [%]')
+    original_title = '<p style="font-family:Times New Roman;text-align: center; color:white; font-size: 25px;">AI Driven Deposition Fraction Calculator [%]</p>'
+    st.markdown(original_title, unsafe_allow_html=True)
     for i in range(8):
         st.write("\n")
     den = st.number_input('Density [gram/cm^3]')
@@ -17,12 +19,12 @@ with col1:
     But1 = st.button('Calculate')
 with col2:
     # st.subheader('Medium Height and Incubation Time for a given density and diameter to reach a desired deposition fraction of nano particle on the cell')
-    original_title = '<p style="font-family:Courier; color:White; font-size: 15px;">Medium Height and Incubation Time for a given density and diameter to reach a desired deposition fraction of nano particle on the cell</p>'
+    original_title = '<p style="font-family:Times New Roman;text-align: center; color:white; font-size: 20px;height:210px;">Medium Height and Incubation Time calculator for a given density and diameter to reach a desired deposition fraction of nano particle on the cell;</p>'
     st.markdown(original_title, unsafe_allow_html=True)
     density = st.number_input('Density[gram/cm^3]')
     diameter = st.number_input('Diameter[nm]')
     deposition = st.number_input('Deposition Fraction [%]')
-    But2 = st.button('Calculate1')
+    But2 = st.button('Calculate ')
 if But1:
     scaler = load(open('scale.sav', 'rb'))
     model = load(open('randomForest.sav','rb'))
