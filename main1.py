@@ -19,7 +19,7 @@ with col1:
     But1 = st.button('Calculate')
 with col2:
     # st.subheader('Medium Height and Incubation Time for a given density and diameter to reach a desired deposition fraction of nano particle on the cell')
-    original_title = '<p style="font-family:Times New Roman;text-align: center; color:white; font-size: 20px;height:210px;">Medium Height and Incubation Time calculator for a given density and diameter to reach a desired deposition fraction of nano particle on the cell;</p>'
+    original_title = '<p style="font-family:Times New Roman;text-align: left; color:white; font-size: 20px;height:210px;">Medium Height and Incubation Time calculator for a given density and diameter to reach a desired deposition fraction of nano particle on the cell</p>'
     st.markdown(original_title, unsafe_allow_html=True)
     density = st.number_input('Density[gram/cm^3]')
     diameter = st.number_input('Diameter[nm]')
