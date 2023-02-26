@@ -28,7 +28,7 @@ with col2:
 if But1:
     scaler = load(open('scale.sav', 'rb'))
     model = load(open('randomForest.sav','rb'))
-    x_test= np.array([[MH,dia,den,time]])
+    x_test= np.array([[MH/1000,dia,den,time]])
     X_test_scaled = scaler.transform(x_test)
     DE = model.predict(X_test_scaled)
 
