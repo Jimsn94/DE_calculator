@@ -6,6 +6,11 @@ import numpy as np
 with open('styles.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 col1, col2 = st.columns(2)
+
+if st.get_theme() == "dark":
+    text_color = "white"
+else:
+    text_color = "black"
 with col1:
     # st.subheader('AI Driven Deposition Fraction Calculator [%]')
     original_title = '<p style="font-family:Times New Roman;text-align: center; color:white; font-size: 25px;">AI Driven Deposition Fraction Calculator [%]</p>'
