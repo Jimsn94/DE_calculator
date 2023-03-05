@@ -12,7 +12,8 @@ with col1:
     st.markdown(original_title, unsafe_allow_html=True)
     # for i in range(8):
     #     st.write("\n")
-    st.markdown("<h3 style='color: white; font-size: 18px; '>Density [gram/cm^3]</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color: white; font-size: 18px; '>Density [gram/cm<sup>3</sup>]</h3>",
+                unsafe_allow_html=True)
     den = st.number_input('    ', step=1)
     st.markdown("<h3 style='color: white; font-size: 18px; '>Diameter [nm]</h3>", unsafe_allow_html=True)
     dia = st.number_input('     ', step=1)
@@ -27,14 +28,10 @@ with col2:
     # st.subheader('Medium Height and Incubation Time for a given density and diameter to reach a desired deposition fraction of nano particle on the cell')
     # original_title = '<p style="font-family:Times New Roman;text-align: left; color:white; font-size: 22px;height:205px;">Medium Height and Incubation Time calculator </p>'
     st.markdown(original_title, unsafe_allow_html=True)
-    # density = st.number_input('Density[gram/cm^3]', step=1)
-    # st.markdown("<style>input[type=number]::-webkit-inner-spin-button," +
-    #             "input[type=number]::-webkit-outer-spin-button { " +
-    #             "-webkit-appearance: none; margin: 0; }</style>", unsafe_allow_html=True)
 
-    # st.markdown("<style>input[type=number] { color: red; }</style>", unsafe_allow_html=True)
 
-    st.markdown("<h3 style='color: white; font-size: 18px; '>Density [gram/cm^3]</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color: white; font-size: 18px; '>Density [gram/cm<sup>3</sup>]</h3>",
+                unsafe_allow_html=True)
     density = st.number_input('', step=1)
     st.markdown("<h3 style='color: white; font-size: 18px; '>Diameter [nm]</h3>", unsafe_allow_html=True)
     diameter = st.number_input(' ', step=1)
